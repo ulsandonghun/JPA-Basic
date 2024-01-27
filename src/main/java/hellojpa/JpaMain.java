@@ -11,9 +11,13 @@ public class JpaMain {
         //code
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-
         try {
+            Member member = new Member();
+            member.setId(1L);
+            member.setUsername("최동훈");
 
+            member.setRoleType(RoleType.USER);
+            em.persist(member);
 
             System.out.println("====================");
             tx.commit();
