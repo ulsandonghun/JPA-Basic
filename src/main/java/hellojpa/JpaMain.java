@@ -13,8 +13,8 @@ public class JpaMain {
         tx.begin();
         try {
             Member member = new Member();
-            member.setId(1L);
-            member.setUsername("최동훈");
+
+            member.setUsername("최동훈2");
 
             member.setRoleType(RoleType.USER);
             em.persist(member);
