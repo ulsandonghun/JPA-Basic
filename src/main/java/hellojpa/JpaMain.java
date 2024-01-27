@@ -13,11 +13,12 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Member member = new Member(200L, "member2024");
-            //persist는 영속화(DB에 저장) 하겠다는 뜻이다.
-            em.persist(member);
+            Member member1 = new Member(1L,"최동훈" );
+            em.persist(member1);
 
-            em.flush();
+            Member member = em.find(Member.class, 1L);
+            member.setName("에스랩");
+
 
             System.out.println("====================");
             tx.commit();
