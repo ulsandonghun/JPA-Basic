@@ -21,9 +21,13 @@ public class JpaMain {
             team.setTeamname("드림팀");
 
             em.persist(team);
-            member.setTeamId(team.getId());
+            member.setTeam(team);
 
+            Member findMember = em.find(Member.class, member.getId());
 
+            Team findTeam = findMember.getTeam();
+
+            System.out.println("findTeam.getTeamname() = " + findTeam.getTeamname());
             System.out.println("====================");
             tx.commit();
         } catch (Exception e) {
