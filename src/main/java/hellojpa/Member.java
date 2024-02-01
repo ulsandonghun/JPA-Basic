@@ -18,18 +18,25 @@ import java.util.Date;
 
 @Entity
 
-@Table(name="MBR")
+@Table(name="member")
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setTeamId(Long teamId) {
+        this.teamId = teamId;
     }
+
     @Column(name = "name",nullable = false)
     //DB에는 name으로 저장됨
     private String username;
-    private Integer age;
 
+    @Column(name = "team_id")
+    private Long teamId;
+
+    public void setUsername(String username) {
+
+        this.username = username;
+    }
 }

@@ -14,10 +14,15 @@ public class JpaMain {
         try {
             Member member = new Member();
 
-            member.setUsername("최동훈2");
-
-            member.setRoleType(RoleType.USER);
+            member.setUsername("다운동");
             em.persist(member);
+
+            Team team = new Team();
+            team.setTeamname("드림팀");
+
+            em.persist(team);
+            member.setTeamId(team.getId());
+
 
             System.out.println("====================");
             tx.commit();
