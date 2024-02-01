@@ -22,6 +22,7 @@ public class JpaMain {
             team.setTeamname("드림팀");
 
             em.persist(team);
+            member.setTeam(team);
             team.getMembers().add(member);
 
 
