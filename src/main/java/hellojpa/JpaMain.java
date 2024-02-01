@@ -22,15 +22,7 @@ public class JpaMain {
             team.setTeamname("드림팀");
 
             em.persist(team);
-            member.setTeam(team);
-
-            em.flush();
-            em.clear();
-            Member findMember = em.find(Member.class, member.getId());
-            List<Member> members = findMember.getTeam().getMembers();
-
-            members.stream()
-                    .forEach(a-> System.out.println(a.getUsername()));
+            team.getMembers().add(member);
 
 
             System.out.println("====================");
